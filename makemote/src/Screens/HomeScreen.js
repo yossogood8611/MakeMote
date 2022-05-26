@@ -1,36 +1,41 @@
 import * as React from 'react';
 import LogoSvg from '../../svgs/logo';
-import {Button, StyleSheet, Text, View, ViewComponent, Image} from 'react-native';
+import PlusSvg from "../../svgs/plus";
+import {StyleSheet, Text, View, TouchableOpacity, Dimensions} from 'react-native';
 import SafeAreaView from "react-native/Libraries/Components/SafeAreaView/SafeAreaView";
 
 function HomeScreen({navigation}){
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.childContainer}>
-                <LogoSvg/>
-                <View style={styles.monthCard}>
-                    <Text style={styles.text.bold}>이번 달</Text>
-                    <View style={styles.viewJustify}>
-                        <Text style={styles.text}>연안식당</Text>
-                        <Text style={styles.text}>426,000 원</Text>
-                    </View>
-                    <View style={styles.viewJustify}>
-                        <Text style={styles.text}>해법영어</Text>
-                        <Text style={styles.text}>100,000 원</Text>
-                    </View>
-                    <View style={styles.viewJustify}>
-                        <Text style={styles.text}>용돈</Text>
-                        <Text style={styles.text}>0 원</Text>
-                    </View>
-                    <View style={styles.line}></View>
-                    <View style={styles.viewJustify}>
-                        <Text style={styles.text.bold}>합계</Text>
-                        <Text style={styles.text.bold}>526,000 원</Text>
+                <View>
+                    <LogoSvg/>
+                    <View style={styles.monthCard}>
+                        <Text style={styles.text.bold}>이번 달</Text>
+                        <View style={styles.viewJustify}>
+                            <Text style={styles.text}>연안식당</Text>
+                            <Text style={styles.text}>426,000 원</Text>
+                        </View>
+                        <View style={styles.viewJustify}>
+                            <Text style={styles.text}>해법영어</Text>
+                            <Text style={styles.text}>100,000 원</Text>
+                        </View>
+                        <View style={styles.viewJustify}>
+                            <Text style={styles.text}>용돈</Text>
+                            <Text style={styles.text}>0 원</Text>
+                        </View>
+                        <View style={styles.line}></View>
+                        <View style={styles.viewJustify}>
+                            <Text style={styles.text.bold}>합계</Text>
+                            <Text style={styles.text.bold}>526,000 원</Text>
+                        </View>
                     </View>
                 </View>
-                <Button
-                    title="Add"
-                    onPress={() => navigation.navigate('AddWork')}/>
+                <TouchableOpacity
+                    style={styles.addButton}
+                    onPress={() => navigation.navigate('AddWork')}>
+                    <PlusSvg/>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );
@@ -39,11 +44,17 @@ function HomeScreen({navigation}){
 const styles = StyleSheet.create({
     container : {
         flex:1,
-        backgroundColor: "white",
-        flexDirection: "column"
+        height: Dimensions.get('window').height,
+        backgroundColor: "white"
     },
     childContainer: {
-        padding : 16
+        flex: 1,
+        padding : 16,
+        height: Dimensions.get('window').height,
+        paddingTop: 20,
+        backgroundColor: "white",
+        flexDirection: "column",
+        justifyContent: "space-between"
     },
     monthCard : {
         paddingHorizontal : 16,
@@ -75,8 +86,16 @@ const styles = StyleSheet.create({
     line: {
         height: 1,
         backgroundColor : "#1A1A1A",
-        marginBottom: 16,
-        marginTop : 26
+        marginBottom: 17,
+        marginTop : 34
+    },
+    addButton: {
+        height: 50,
+        paddingVertical: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#4169E1',
+        borderRadius: 5
     }
 });
 

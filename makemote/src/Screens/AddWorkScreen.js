@@ -1,18 +1,22 @@
 import * as React from 'react';
-import {Button, StyleSheet, Text, View, ViewComponent} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
+import SafeAreaView from "react-native/Libraries/Components/SafeAreaView/SafeAreaView";
 
 function AddWorkScreen(){
     return (
-        <View style={styles.container}>
-            <Text>Add</Text>
-        </View>
+        <SafeAreaView style={styles.container}>
+            <View sytle={styles.childContainer}>
+                //일한곳(시간, 시급, 세금 자동 기입) 수정 가능, 추가
+            </View>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container : {
-        paddingTop : 100,
-        paddingHorizontal : 20
+        flex:1,
+        height: Dimensions.get('window').height,
+        backgroundColor: "white"
     }
 });
 
