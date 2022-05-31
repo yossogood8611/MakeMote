@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     },
     childContainer: {
         flex: 1,
-        padding : 16,
         height: Dimensions.get('window').height,
         paddingTop: 20,
         backgroundColor: "white",
@@ -24,9 +23,7 @@ const styles = StyleSheet.create({
         shadowColor: "#797979",
         shadowOpacity: 0.25,
         shadowOffset: {width: 4, height: 4},
-        shadowRadius: 10,
-        marginBottom: 20,
-        marginTop: 16
+        shadowRadius: 10
     },
     viewJustify : {
         flexDirection: "row",
@@ -50,7 +47,7 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor : "#1A1A1A",
         marginBottom: 17,
-        marginTop : 34
+        marginTop : 27
     },
     addButton: {
         height: 50,
@@ -58,7 +55,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#4169E1',
-        borderRadius: 5
+        borderRadius: 5,
+        marginHorizontal: 16
     },
     topBar : {
         flex: 1,
@@ -141,6 +139,21 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 1,
         marginBottom: 17
+    },
+    calendar: {
+        paddingHorizontal : 16,
+        paddingTop : 10,
+        paddingBottom: 10,
+        borderRadius: 10,
+        backgroundColor: "white",
+        elevation : 3,
+        shadowColor: "#797979",
+        shadowOpacity: 0.25,
+        shadowOffset: {width: 4, height: 4},
+        shadowRadius: 10,
+        marginTop: 16,
+        color: '#1A1A1A',
+        marginBottom: 100,
     }
 });
 
