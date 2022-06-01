@@ -8,10 +8,12 @@ function SelectDropdownComponent(props) {
     let itemList = props.itemList;
     let defaultItem = props.defaultItem;
     let isOpened = props.isOpened;
+    let setIndex = props.setIndex;
             return(
                 <SelectDropdown
                     data={itemList}
                     onSelect={(selectedItem, index)=>{
+                        setIndex(index);
                         console.log(selectedItem, index)
                     }}
                     buttonTextAfterSelection={(selectedItem, index)=>{

@@ -47,7 +47,12 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor : "#1A1A1A",
         marginBottom: 17,
-        marginTop : 27
+        marginTop : 27,
+        grey: {
+            backgroundColor: '#E9E9E9',
+            height: 1,
+            marginVertical : 10
+        }
     },
     addButton: {
         height: 50,
@@ -64,7 +69,8 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         width: Dimensions.get('window').width,
         backgroundColor: 'grey',
-        marginBottom: 17
+        marginBottom: 30,
+        marginLeft: 2
     },
     backArrow : {
         width: 18,
