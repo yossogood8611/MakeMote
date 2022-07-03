@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
         marginBottom : 10,
         alignItems: 'center'
     },
+    viewJustifyHalfSize : {
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        marginBottom : 10,
+        alignItems: 'center'
+    },
     text : {
         color: "#1A1A1A",
         fontSize: 16,
@@ -41,6 +47,9 @@ const styles = StyleSheet.create({
         white: {
             fontSize: 16,
             color: 'white'
+        },
+        small: {
+            fontSize: 12,
         }
     },
     line: {
@@ -62,6 +71,37 @@ const styles = StyleSheet.create({
         backgroundColor: '#4169E1',
         borderRadius: 5,
         marginHorizontal: 16
+    },
+    checkBox: {
+        height: 17,
+        width: 17,
+        padding: 0,
+        borderStyle: "solid",
+        borderColor: "#E9E9E9",
+        borderWidth: 1,
+        borderRadius: 5,
+        marginLeft: 5
+    },
+    checkedBox: {
+        height: 17,
+        width: 17,
+        padding: 0,
+        borderStyle: "solid",
+        borderColor: "#E9E9E9",
+        backgroundColor: "#E9E9E9",
+        borderWidth: 1,
+        borderRadius: 5,
+        marginLeft: 5
+    },
+    newWorkplaceInputBox:{
+        flex:0.965,
+        height: 35,
+        paddingLeft: 17,
+        borderColor: "#E9E9E9",
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderRadius: 5,
+        marginLeft: 10
     },
     topBar : {
         flex: 1,

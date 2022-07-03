@@ -27,9 +27,11 @@ let taxList = ["적용 안함", "소득세 3.3%", "4대보험 9.32%"];
 
 function AddWorkScreen({navigation}){
     const [hourlyWage, setHourlyWage] = useState(9160);
+    const [newWorkplace, setNewWorkplace] = useState("새 근무지 입력");
     const [date, setDate] = useState(new Date(1598051730000));
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
+    const [isCheckedNewWorkplace, setIsCheckedNewWorkplace] = useState(false);
 
     const [workingPlaceIndex, setWorkingPlaceIndex] = useState(0);
     const [workingHoursIndex, setWorkingHoursIndex] = useState(0);
@@ -80,6 +82,22 @@ function AddWorkScreen({navigation}){
                         <View style={styles.viewJustify}>
                             <Text style={styles.text.bold}>직장</Text>
                             <SelectDropdownComponent isOpened={isOpened} defaultItem={recentWorkPlace} itemList={workPlace} setIndex={setWorkingPlaceIndex}/>
+                        </View>
+                        <View style={styles.viewJustifyHalfSize}>
+                            <Text style={styles.text.small}>새 근무지 직접 입력</Text>
+                            {isCheckedNewWorkplace ?
+                                <TouchableOpacity style={styles.checkedBox} onPress={()=> setIsCheckedNewWorkplace(!isCheckedNewWorkplace)}></TouchableOpacity>
+                                : <TouchableOpacity style={styles.checkBox} onPress={()=> setIsCheckedNewWorkplace(!isCheckedNewWorkplace)}></TouchableOpacity>}
+                            {isCheckedNewWorkplace &&
+                            <TextInput
+                                style={styles.newWorkplaceInputBox}
+                                keyboardType='string'
+                                onChangeText={(newWorkplace)=> setNewWorkplace(newWorkplace)}
+                                value={hourlyWage}
+                                placeholder="직접 입력"
+                                placeholderTextColor="#1A1A1A"
+                                multiline={false}
+                            />}
                         </View>
                         <View style={styles.viewJustify}>
                             <Text style={styles.text.bold}>근무시간</Text>
